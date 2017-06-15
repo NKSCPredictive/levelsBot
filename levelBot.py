@@ -89,6 +89,8 @@ async def list_stars(ctx,*args):
                     return None
             user = args[0]
             await level_bot.send_message(ctx.message.channel, 'User "{}" is not registered for the :stars: list.'.format(user))
+        elif args[0].lower() == "all":
+            await level_bot.send_message(ctx.message.channel, 'User "{}" has {} :stars:.'.format(key,player_stars[key]))
         elif len(player_stars) is 0:
             message = ctx.message.content
             user = message.replace('?list_stars ','')
